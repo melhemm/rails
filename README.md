@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Site access features:
+User must be logged in to access the Quiz.
+signup user is required to give username, first name, last name, e-mail address and password.
 
-Things you may want to cover:
+Features of the quiz:
+Each question is displayed only once per user.
+Questions are displayed randomly for every user.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Administrative features:
+Only admin can add and delete questions.
