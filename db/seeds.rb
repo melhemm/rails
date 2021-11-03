@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-  { name: 'user' }, 
-  { name: 'user2' }
+  { name: 'user', email: 'gmail' }, 
+  { name: 'user2', email: 'yahoo' }
 ])
 
 categories = Category.create([
@@ -23,9 +23,9 @@ tests = Test.create([
 ])
 
 questions = Category.create([
-  { body: 'Example ques1', test_id: tests[0].id }, 
-  { body: 'Example ques2', test_id: tests[1].id}, 
-  { body: 'Example ques3', test_id: tests[1].id}
+  { title: 'Example ques1', test_id: tests[0].id }, 
+  { title: 'Example ques2', test_id: tests[1].id}, 
+  { title: 'Example ques3', test_id: tests[1].id}
 ])
 
 answers = Answer.create([
