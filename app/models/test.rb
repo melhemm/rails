@@ -1,9 +1,10 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :users
-  has_many :questions
-  has_many :user_tests
   belongs_to :author, class_name: "User", foreign_key: "author_id"
+
+  has_many :questions, dependent: :destroy
+  has_many :user_tests
+  has_many :users, through: :user_tests
   
   def self.sort_categories(category)
     joins(:category)
