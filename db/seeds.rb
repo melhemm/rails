@@ -16,7 +16,6 @@ categories = Category.create!([
   { title: 'back-end'}
 ])
 
-# todo 
 tests = Test.create!([
   {title: 'Javascript', level: 1, category_id: categories[0].id},
   {title: 'Rails', level: 2, category_id: categories[1].id}, 
@@ -32,7 +31,8 @@ questions = Question.create!([
 answers = Answer.create!([
   { body: 'correct answer', correct: true, question_id: questions[0].id }, 
   { body: 'incorrect', correct: false, question_id: questions[0].id}, 
-  { body: 'incorrect', correct: false, question_id: questions[0].id}
+  { body: 'incorrect', correct: false, question_id: questions[0].id},
+  { body: 'incorrect', correct: false, question_id: questions[1].id},
+  { body: 'correct answer', correct: true, question_id: questions[1].id }, 
+  { body: 'incorrect', correct: false, question_id: questions[1].id}
 ])
-
-puts "seeds done"
