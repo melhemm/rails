@@ -1,16 +1,16 @@
 class Answer < ApplicationRecord
-
   MAX_ANSWERS_VALIDATION = 4
 
   belongs_to :question
 
-  scope :correct_answer, -> { where(correct: true)}
+  scope :correct, -> { where(correct: true)}
 
-  validates :validate_answers, on: :create
+  validates :validate_answers, on: [:create, :update]
+
+  private
 
   def validate_answers
-    errors.add(:answer) 
-    if question.answers.size >= MAX_ANSWERS_VALIDATION
+    errors.add(:base, "Answers must be from 1 to 4") if question.answers.count >= MAX_ANSWERS_VALIDATION
   end
 
 end
