@@ -12,7 +12,7 @@ class Test < ApplicationRecord
   scope :categories_by_name, -> (category) { joins(:category).where(categories: {title: category}) }
 
   validates :title, presence: true, uniqueness: { scope: :level }
-  validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}, allow_nil: true
+  validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   
   def self.sort_categories(category)
     categories_by_name(category)
