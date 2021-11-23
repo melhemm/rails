@@ -1,0 +1,29 @@
+<h1>Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Test</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.body %></td>
+        <td><%= question.test.title %></td>
+        <td><%= link_to "Show", question %></td>
+        <td><%= link_to "Destroy", question , 
+        method: :delete, 
+        data: { confirm: "Are you sure?" }%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Question", new_question_path %>
+

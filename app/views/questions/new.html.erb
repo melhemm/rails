@@ -1,0 +1,17 @@
+<form action="/questions" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" hidden>
+
+  <div>
+    <label for="question_body">body</label><br>
+    <input type="text" name="question[body]" id="question_body">
+    <br>
+    <label for="question_Test">test_id</label><br>
+    <input type="number" name="question[test_id]" id="question_test">
+  </div>
+
+  <div>
+    <input type="submit" value="Create" >
+  </div>
+</form>
+
+<%= link_to "Home page", root_path %>
