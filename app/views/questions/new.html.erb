@@ -1,12 +1,11 @@
-<form action="/questions" method="POST">
+<form action="/tests/<%= params[:test_id] %>/questions" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" hidden>
 
   <div>
-    <label for="question_body">body</label><br>
-    <input type="text" name="question[body]" id="question_body">
+    <label for="question-body">Body:</label>
+    <input type="text" name="question[body]" id="question-body">
     <br>
-    <label for="question_Test">test_id</label><br>
-    <input type="number" name="question[test_id]" id="question_test">
+
   </div>
 
   <div>

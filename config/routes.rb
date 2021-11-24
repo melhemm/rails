@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :questions, only: [:index, :show, :new, :create, :destroy]
-
-  root to: "questions#index"
+  root to: "tests#index"
 
   resources :tests do
     resources :questions, shallow: true
