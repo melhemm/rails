@@ -1,0 +1,16 @@
+<form action="/tests/<%= params[:test_id] %>/questions" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" hidden>
+
+  <div>
+    <label for="question-body">Body:</label>
+    <input type="text" name="question[body]" id="question-body">
+    <br>
+
+  </div>
+
+  <div>
+    <input type="submit" value="Create" >
+  </div>
+</form>
+
+<%= link_to "Home page", root_path %>
