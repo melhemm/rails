@@ -5,10 +5,7 @@ class TestsController < ApplicationController
    @tests = Test.all
   end
 
-  def show
-    @questions = @test.questions
-  end
-  
+  def show;  end
   def new
     @test = Test.new
   end
@@ -49,5 +46,4 @@ class TestsController < ApplicationController
   def find_test
     @test = Test.find(params[:id])
   end
-
 end
