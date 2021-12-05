@@ -13,7 +13,7 @@ class Test < ApplicationRecord
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :categories_by_name, -> (category) { joins(:category).where(categories: {title: category}) }
 
-  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :title, presence: true
   validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   
   def self.sort_categories(category)

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_12_05_103637) do
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.integer "question_id", null: false
-    t.boolean "correct", null: false
+    t.boolean "correct", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_12_05_103637) do
 
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "level", null: false
+    t.integer "level", default: 0, null: false
     t.integer "category_id", null: false
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
