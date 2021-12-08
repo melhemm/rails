@@ -1,5 +1,7 @@
 class TestPassage < ApplicationRecord
-  
+    
+  EXCELLENT_TEST_RESULT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -19,6 +21,18 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def success_percent
+    ((correct_questions / test.questions.count) * 100).round
+  end
+
+  def success?
+    success_percent >= EXCELLENT_TEST_RESULT
+  end
+
+  def current_question_number
+    test.questions.where('id <= :id', id: current_question.id).count
+  end
+
   private
 
   def before_validation_set_first_question
@@ -26,10 +40,8 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
- end
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids != nil
+  end
 
   def correct_answers
     current_question.answers.correct
