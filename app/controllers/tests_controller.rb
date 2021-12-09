@@ -1,13 +1,12 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy]
-  before_action :set_test, only: %i[show edit update destroy start]
+  before_action :find_test, only: %i[show edit update destroy start]
   before_action :set_user, only: :start
 
   def index
    @tests = Test.all
   end
 
-  def show;  end
+  def show; end
   
   def new
     @test = Test.new
@@ -23,9 +22,7 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @test.update(test_params)
@@ -55,12 +52,7 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def set_test
-    @test = Test.find(params[:id])
-  end
-
   def set_user
     @user = User.first
   end
-
 end

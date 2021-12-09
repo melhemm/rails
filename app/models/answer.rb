@@ -5,12 +5,12 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true)}
 
-  # validate :validate_answers
+  validate :validate_answers
 
   private
 
-  # def validate_answers
-  #   errors.add(:base, "Answers must be from 1 to 4") if question.answers.count >= MAX_ANSWERS_VALIDATION
-  # end
+  def validate_answers
+    errors.add(:base, "Answers must be from 1 to 4") if question.answers.count >= MAX_ANSWERS_VALIDATION
+  end
 
 end
