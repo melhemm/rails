@@ -18,7 +18,6 @@ class AnswersController < ApplicationController
     else
       render :new
     end
-
   end
 
   def update

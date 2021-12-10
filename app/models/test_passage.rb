@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success_percent
-    ((correct_questions / test.questions.count) * 100).round
+    ((correct_questions / test.questions.count) * 100)
   end
 
   def success?

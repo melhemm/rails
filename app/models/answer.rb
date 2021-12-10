@@ -1,11 +1,11 @@
 class Answer < ApplicationRecord
-  # MAX_ANSWERS_VALIDATION = 4
+  MAX_ANSWERS_VALIDATION = 4
 
   belongs_to :question
 
   scope :correct, -> { where(correct: true)}
 
-  validate :validate_answers
+  validates :validate_answers, presence: true, on: [:create, :update]
 
   private
 
