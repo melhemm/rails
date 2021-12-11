@@ -5,7 +5,7 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true)}
 
-  validates :validate_answers, presence: true, on: [:create, :update]
+  validate :validate_answers, on: :create
 
   private
 
