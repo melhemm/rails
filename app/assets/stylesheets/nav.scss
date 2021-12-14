@@ -1,0 +1,11 @@
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  max-width: 1100px;
+}
+
+.nav-link {
+  text-decoration: none;
+}

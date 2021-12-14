@@ -1,0 +1,14 @@
+.flash {
+  border: 2px solid rgb(73, 42, 42);
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  max-width: 400px;
+}
+
+.flash.alert {
+  border-color: #ef2727;
+}
