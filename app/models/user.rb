@@ -1,6 +1,8 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
@@ -8,8 +10,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, format: {with: /[a-zA-Z0-9_\-\.]{0,}([.]?[a-zA-Z0-9]{1,})[@](gmail.com|hotmail.com|yahoo.com|yandex.com|yandex.ru|mail.ru)/}
   
-  has_secure_password
-
   def tests_in_level(level)
     tests.where(level: level)
   end
