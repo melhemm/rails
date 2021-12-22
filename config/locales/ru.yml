@@ -1,17 +1,16 @@
 ru:
-  hello: "Привет"
-  
   helpers:
     submit:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+    select: 
+      prompt: "Выбирайте категорию"
     label:
-      test: 
+      test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
-
   shared:
     errors: 
       header: 
@@ -19,22 +18,52 @@ ru:
         many: "обнаружено %{count} ошибок"
         one: "обнаружено %{count} ошибока"
         other: "обнаружено %{count} ошибоки"
-
+  routes:
+    back: "Назад"
+    edit: "Изменить"
+    start: "Начать"
   tests: 
     index:
       header: "Доступные Тесты"
-
+      title: "Название"
+      level: "Уровень"
+      questions: "Количество вопросов"
+      actions: "Действия"
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
-
   admin: 
     tests:
       create: 
         success: "Тест успешно создан."
+      new:
+        header: "Новый тест"
       index:
         header: "Доступные Тесты"
-
+        title: "Название"
+        level: "Уровень"
+        questions: "Количество вопросов"
+        actions: "Действия"
+        create_test_btn: "Создать новый тест"
+      show:
+        header: "Тест: %{title}"
+        level: "Уровень: %{level}"
+        new_question: "Новый вопрос"
+        question: "Вопросы"
+        actions: "Действия"
+      edit: 
+        header: "Редактировать тест: %{title}"
+    questions:
+      show:
+        header: "Вопрос:"
+        answers: "Ответы"
+        new_question: "Новый вопрос"
+      edit:
+        header: "Редактировать вопрос: %{title}"
+  actions:
+    show: "Открыть"
+    edit: "Изменить"
+    delete: "Удалить"
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'

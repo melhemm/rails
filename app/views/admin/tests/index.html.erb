@@ -2,13 +2,13 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>questions</th>
-    <th colspan="4">Action</th>
+   <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.questions')%></th>
+    <th colspan="4"><%= t('.actions')%></th>
   </tr>
 
   <%= render @tests %>
 </table>
 
-<%= link_to 'Create test', new_admin_test_path %>
+<%= link_to t('.create_test_btn'), new_admin_test_path %>
