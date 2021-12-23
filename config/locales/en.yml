@@ -31,3 +31,40 @@
 
 en:
   hello: "Hello world"
+
+  tests: 
+    index:
+      header: "Tricky Tests"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test: 
+        title: "Title"
+        level: "Level"
+        category_id: "Category" 
+  
+  shared:
+    errors: 
+      header: 
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  test_passages:
+    result:
+      header: "Test %{title} Completed"
+
+  admin: 
+    tests:
+      create: 
+        success: "Test created."
+      index:
+        header: "Tricky Tests"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You have just completed the TestGuru!'
+
