@@ -13,27 +13,11 @@
   </head>
 
   <body>
-
-    <div class="container">
-      <ul class="nav-container">
-        <li><span><%= link_to "Guru", root_path, class: "nav-link" %></span></li>
-        <% if user_signed_in? %>
-          <li class="nav user">Welcome, <b>
-            <%= current_user.first_name %>
-          </li>
-          <li>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-          <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
-          <li><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/nav' %>
     <%= render 'shared/flash' %>
-
-    <%= yield %>
-
-    <%= render 'shared/footer' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
