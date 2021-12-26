@@ -2,26 +2,27 @@ class GistQuestionService
 
   def initialize(question, client: nil)
     @question = question
-    @test =  @question.test
-    @client = client || GitHubClient.new
+    @test = @question.test
+    @client = client || OctokitClient.new
   end
 
   def call
     @client.create_gist(gist_params)
   end
 
-  private
-
   def gist_params
     {
-      "description": " #{@test.title} from TestGuru Examples ",
+      description: I18n.t('test_passages.gist.description', title: @test.title),
+      public: true,
       files: {
-        'test-guru-question.txt' => {
+        "test-guru-question#{@question.id}.txt" => {
           content: gist_content
         }
       }
     }
   end
+
+  private
 
   def gist_content
     content = [@question.body]
