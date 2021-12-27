@@ -33,7 +33,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
     gist:
-      success: "Gist %{link} успешно сохранен"
+      success: "Gist %{url} успешно сохранен"
       failure: "ошибка"
       description: "Вопрос %{title} от TestGuru"
   admin: 
