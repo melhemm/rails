@@ -57,6 +57,10 @@ ru:
         actions: "Действия"
       edit: 
         header: "Редактировать тест: %{title}"
+    gists:
+      index:
+        user: "Пользователь"
+        question: "Вопрос"
     questions:
       show:
         header: "Вопрос:"
@@ -71,8 +75,3 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
-
-
-
-
-
