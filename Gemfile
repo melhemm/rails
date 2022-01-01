@@ -27,6 +27,7 @@ gem 'devise', '~> 4.0'
 #  UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'octicons_helper'
 
 # octokit api
 gem 'octokit'
@@ -40,8 +41,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rails-i18n', '~> 6.0.0'
 
 gem 'rubocop-rails'
-
-gem 'octicons_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
