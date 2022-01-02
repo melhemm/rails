@@ -27,7 +27,6 @@ gem 'devise', '~> 4.0'
 #  UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
-gem 'octicons_helper'
 
 # octokit api
 gem 'octokit'
