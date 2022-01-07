@@ -70,6 +70,7 @@ ru:
     show: "Открыть"
     edit: "Изменить"
     delete: "Удалить"
+    cancel: "Отмена"
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
@@ -77,4 +78,3 @@ ru:
     success: "<a href= %{gist_url} target='_blank'>Gist</a>"
     failure: "ошибка"
     description: "Вопрос %{title} от TestGuru"
-

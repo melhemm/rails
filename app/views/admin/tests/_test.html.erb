@@ -9,7 +9,7 @@
   <td class="algin-middle">
     <%= link_to t('actions.edit'), 
                 edit_admin_test_path(test),
-                data: { test_id: test.id },
+                data: { test_id: test.id, edit: t('actions.edit'), cancel: t('actions.cancel') },
                 class: "form-inline-link" %>
   </td>
   
