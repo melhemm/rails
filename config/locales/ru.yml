@@ -53,6 +53,8 @@ ru:
         actions: "Действия"
       edit: 
         header: "Редактировать тест: %{title}"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         user: "Пользователь"
