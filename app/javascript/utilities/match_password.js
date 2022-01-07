@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
-  const formInput = document.querySelector("#new_user");
+  const formInput = document.getElementById("new_user");
   if (formInput) {
     const paswd = document.getElementById('user_password')
     const confirm_paswd = document.getElementById('user_password_confirmation')
