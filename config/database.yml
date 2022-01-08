@@ -15,12 +15,12 @@ default: &default
   
 development:
   <<: *default
-  database: test_guru_development
+  database: test_guru_developmentx
 
 test:
   <<: *default
-  database: test_guru_test
+  database: test_guru_testx
 
 production:
   <<: *default
-  database: test_guru_production
+  database: test_guru_productionx

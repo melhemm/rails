@@ -1,6 +1,6 @@
 users = User.create!([
-  { first_name: 'user', last_name: 'userLastname' ,email: 'user@gmail.com', password: '213123' }, 
-  { first_name: 'user2', last_name: 'userLastname' ,email: 'user@yahoo.com', password: '551231' }
+  { first_name: 'user', last_name: 'userLastname' ,email: 'uservv@gmail.com', password: '213123' }, 
+  { first_name: 'user2', last_name: 'userLastname' ,email: 'useraa@yahoo.com', password: '551231' }
 ])
 
 categories = Category.create!([
