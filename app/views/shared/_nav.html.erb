@@ -7,6 +7,7 @@
           <%= link_to "Admin Panel", admin_tests_path, class: 'nav-link text-white' %>
           <%= link_to 'Gists', admin_gists_path, class: 'nav-link text-white' %>
         <% end %>
+        <%= link_to "Contact", new_user_feedback_path(current_user) %>
         Welcome, <b> <%= current_user.first_name %></b> |
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
