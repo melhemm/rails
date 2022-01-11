@@ -26,7 +26,7 @@ function formInlineHandler(testId) {
   const link = document.querySelector(`.form-inline-link${dataAtrr}`)
   const testTitle = document.querySelector(`.test-title${dataAtrr}`)
   const formInline = document.querySelector(`.form-inline${dataAtrr}`)
-
+  if(!formInline) return
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
