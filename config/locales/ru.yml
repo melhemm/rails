@@ -59,6 +59,7 @@ ru:
       index:
         user: "Пользователь"
         question: "Вопрос"
+        link: "Ссылка Gist"
     questions:
       show:
         header: "Вопрос:"
@@ -75,6 +76,6 @@ ru:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
   gists:
-    success: "<a href= %{gist_url} target='_blank'>Gist</a>"
+    success: "Gist сохранен"
     failure: "ошибка"
     description: "Вопрос %{title} от TestGuru"
