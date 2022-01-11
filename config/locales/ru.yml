@@ -63,7 +63,7 @@ ru:
       show:
         header: "Вопрос:"
         answers: "Ответы"
-        new_question: "Новый вопрос"
+        new_answer: "Создать ответ"
       edit:
         header: "Редактировать вопрос: %{title}"
   actions:
