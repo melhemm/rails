@@ -11,11 +11,11 @@
         <% else %>
           <%= link_to "Contact", new_user_feedback_path(current_user) %>
           Welcome, <b> <%= current_user.first_name %></b> |
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
         <% end %>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path %>
-        <%= link_to "Login", new_user_session_path %>
+        <%= link_to t('.register'), new_user_registration_path %>
+        <%= link_to t('.login'), new_user_session_path %>
       <% end %>
     </span>
   </div>

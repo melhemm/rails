@@ -18,6 +18,10 @@ ru:
         many: "обнаружено %{count} ошибок"
         one: "обнаружено %{count} ошибока"
         other: "обнаружено %{count} ошибоки"
+    nav:
+      login: "Вход"
+      register: "Регистрация"
+      logout: "Выйти"
   routes:
     back: "Назад"
     edit: "Изменить"
