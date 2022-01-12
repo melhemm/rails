@@ -113,3 +113,6 @@ ru:
     success: "Gist сохранен"
     failure: "ошибка"
     description: "Вопрос %{title} от TestGuru"
+  feedbacks:
+    new:
+      send: "Отправить"

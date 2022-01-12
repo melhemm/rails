@@ -6,6 +6,7 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       user: "Пользователь"
+      feedback: "связаться с нами"
 
     attributes:
       test:
@@ -32,3 +33,6 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         password_confirmation: "Подтвердить пароль"
+
+      feedback:
+        message: "Сообщение"
