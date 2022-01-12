@@ -1,4 +1,9 @@
 ru:
+  actions:
+    show: "Открыть"
+    edit: "Изменить"
+    delete: "Удалить"
+    cancel: "Отмена"
   helpers:
     submit:
       test:
@@ -22,6 +27,12 @@ ru:
       login: "Вход"
       register: "Регистрация"
       logout: "Выйти"
+      admin: "Админка сайта"
+      welcome: "Привет"
+      contact: "Контакты"
+    footer:
+      year: "Год"
+      author: "Автор"
   routes:
     back: "Назад"
     edit: "Изменить"
@@ -36,9 +47,18 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      ex: "Отлично"
+      bad: "Плохо"
+    show: 
+      test: "тест"
+      passing: "Прохождение"
+      question: "Вопрос"
+      from: "из"
+      next: "Следующий вопрос"
+      gist: "Создать вопрос на gist"
   admin: 
     tests:
-      create: 
+      create:
         success: "Тест успешно создан."
       new:
         header: "Новый тест"
@@ -59,23 +79,33 @@ ru:
         header: "Редактировать тест: %{title}"
       form_inline:
         submit: "Ok"
+    answers:
+      create:
+        success: "Ответ успешно создан."
+      new:
+        header: "Новый ответ"
+      edit:
+        header: "Редактировать ответ: %{title}"
+      show: 
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильно"
     gists:
       index:
         user: "Пользователь"
         question: "Вопрос"
         link: "Ссылка Gist"
     questions:
+      create:
+        success: "Вопрос успешно создан."
+      new:
+        header: "Новый вопрос для тест: %{title}"
       show:
         header: "Вопрос:"
         answers: "Ответы"
         new_answer: "Создать ответ"
       edit:
         header: "Редактировать вопрос: %{title}"
-  actions:
-    show: "Открыть"
-    edit: "Изменить"
-    delete: "Удалить"
-    cancel: "Отмена"
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'

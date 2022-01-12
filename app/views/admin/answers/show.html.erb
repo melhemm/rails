@@ -1,20 +1,8 @@
-<h1> Question </h1>
-
+<h1><%= t('.header')  %>: <%= @answer.question.body %></h1>
+<p><%= t('.answer')  %>: <b> <%= @answer.body %></b></p>
 <p>
-  <%= @answer.question.body %>
-</p>
-
-<p>
-  <b>Answer:</b>
-  <%= @answer.body %>
-</p>
-
-<p>
-  <b>Correct:</b>
-  <%= @answer.correct %>
-</p>
-
+<p><%= t('.correct')  %>: <b> <%= @answer.correct %></b></p>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %> <br>
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %>
+<%= link_to t('routes.back'), admin_question_path(@answer.question) %> <br>
+<%= link_to t('routes.edit'), edit_admin_answer_path(@answer) %>

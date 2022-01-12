@@ -4,13 +4,13 @@
     <span class="navbar-text">
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          Welcome, <b> <%= current_user.first_name %></b> |
-          <%= link_to "Admin Panel", admin_tests_path, class: 'nav-link text-white' %>
+          <%= t('.welcome') %> <b> <%= current_user.first_name %></b> |
+          <%= link_to t('.admin'), admin_tests_path, class: 'nav-link text-white' %>
           <%= link_to 'Gists', admin_gists_path, class: 'nav-link text-white' %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Contact", new_user_feedback_path(current_user) %>
-          Welcome, <b> <%= current_user.first_name %></b> |
+          <%= link_to t('.contact'), new_user_feedback_path(current_user) %>
+          <%= t('.welcome') %> <b> <%= current_user.first_name %></b> |
           <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
         <% end %>
       <% else %>

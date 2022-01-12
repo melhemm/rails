@@ -1,8 +1,8 @@
-<h1 class="text-center mb-3">Passing: <%= @test_passage.test.title %> Test</h1>
+<h4 class="text-center mb-3"> <%= t('.passing')%> <%= t('.test') %>: <%= @test_passage.test.title %></h4>
 <div class="card border-info mb-4 ">
   <div class="d-flex justify-content-between align-items-center card-header bg-info text-white">
     <span>
-      Question <%= @test_passage.current_question_number %> of <%= @test_passage.test.questions.count %>
+      <%= t('.question')%> <%= @test_passage.current_question_number %> <%= t('.from')%> <%= @test_passage.test.questions.count %>
     </span>
   </div>
   <div class="progress-bar">
@@ -19,8 +19,8 @@
           <%= b.label %>
         </div>
       <% end %>
-        <%= link_to 'Create Gist', test_passage_gists_path(@test_passage), method: :post%>
-        <%= form.submit "Next",
+        <%= link_to t('.gist'), test_passage_gists_path(@test_passage), method: :post, class: 'btn btn-success' %>
+        <%= form.submit t('.next'),
           class: "btn btn-primary start-btn",
           data: { progress: (@test_passage.current_question_number) * 100 / @test_passage.test.questions.count },
           id: 'progress'%>

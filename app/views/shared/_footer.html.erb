@@ -1,7 +1,7 @@
-<div>
-  <p >Footer</p> <br>
-  <p>Year: <%= current_year %></p>
-  <p>Author: Jamal Mulhem</p>
+<footer class="page-footer blue">
+  <p><%= t('.year')%>: <%= current_year %></p>
+  <%= link_to 'Online school Thinknetica', 'https://thinknetica.com' %>
+  <p><%= t('.author')%>: Jamal Mulhem</p>
   <p>GitHub: <%= github_url('melhemm', 'rails') %></p>
-  <p><%= link_to 'Online school Thinknetica', 'https://thinknetica.com' %></p>
-</div>
+  
+</footer>
