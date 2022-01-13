@@ -1,8 +1,8 @@
 <h1> <%= t('.header', title: @test_passage.test.title) %> </h1>
 
 <% if @test_passage.success? %>
-  <p style="color: green">Excellent</p>
+  <p style="color: green"><%= t('.ex')%></p>
 <% else %>
-  <p style="color: red">Bad</p>
+  <p style="color: red"><%= t('.bad')%></p>
 <% end %>
-<%= link_to 'Back', tests_path %>
+<%= link_to t('routes.back'), tests_path %>

@@ -1,5 +1,7 @@
-<% flash.each do |key, message| %>
+<% flash.each do |key, msg| %>
   <div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
-    <%= message %>
+    <% if msg.is_a?(String) %>
+      <div id="alert<%= key %>"> <%= sanitize(msg) %> </div>
+    <% end %>
   </div>
 <% end %>

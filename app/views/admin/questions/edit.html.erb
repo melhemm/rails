@@ -1,4 +1,3 @@
-<%= question_header(@question) %>
-
+<%= t('.header', title: @question.body) %>
 <%= render 'form' %>
-<%= link_to 'back', admin_test_path(@question.test) %>
+<%= link_to t('routes.back'), admin_test_path(@question.test) %>

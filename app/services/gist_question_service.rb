@@ -1,14 +1,5 @@
+Result = Struct.new(:success?, :html_url)
 class GistQuestionService
-
-  Result = Struct.new(:hash) do
-    def success?
-      !hash.nil?
-    end
-  
-    def gist_url
-      hash.url
-    end
-  end
 
   def initialize(question, client = default_client)
     @question = question
@@ -17,7 +8,8 @@ class GistQuestionService
   end
 
   def call
-    Result.new(@client.create_gist(gist_params))
+    response = @client.create_gist(gist_params)
+    Result.new(response.html_url.present?, response.html_url)
   end
 
   private
@@ -41,5 +33,4 @@ class GistQuestionService
   def gist_content
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
-
 end

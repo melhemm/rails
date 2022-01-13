@@ -1,12 +1,38 @@
-ru: 
+ru:
   activerecord:
     models:
-      tests: 'Тест'
+      test: "Тест"
+      category: "Категория"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
+      feedback: "связаться с нами"
 
-  attributes:
-    test:
-      title: "Название"
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+      
+      category:
+        title: "Название"
 
-  errors:
-    messages:
-      blank: "Название не может быть пустым"
+      question:
+        body: "Содержание"
+        test_id: "Тест"
+
+      answer:
+        body: "Содержание"
+        correct: "Правильный ответ"
+        question_id: "Вопрос"
+
+      user:
+        email: "Почта"
+        password: "Пароль"
+        remember_me: "Запомнить меня"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password_confirmation: "Подтвердить пароль"
+
+      feedback:
+        message: "Сообщение"

@@ -3,15 +3,19 @@
     <%= link_to "TestGuru", root_path, class: 'navbar-brand' %>
     <span class="navbar-text">
       <% if user_signed_in? %>
-        <% if current_user.type == "Admin" %>
-          <%= link_to "Admin Panel", admin_tests_path, class: 'nav-link text-white' %>
+        <% if current_user.admin? %>
+          <%= t('.welcome') %> <b> <%= current_user.first_name %></b> |
+          <%= link_to t('.admin'), admin_tests_path, class: 'nav-link text-white' %>
           <%= link_to 'Gists', admin_gists_path, class: 'nav-link text-white' %>
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to t('.contact'), new_user_feedback_path(current_user) %>
+          <%= t('.welcome') %> <b> <%= current_user.first_name %></b> |
+          <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
         <% end %>
-        Welcome, <b> <%= current_user.first_name %></b> |
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path %>
-        <%= link_to "Login", new_user_session_path %>
+        <%= link_to t('.register'), new_user_registration_path %>
+        <%= link_to t('.login'), new_user_session_path %>
       <% end %>
     </span>
   </div>
