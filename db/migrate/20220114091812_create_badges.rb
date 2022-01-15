@@ -7,6 +7,5 @@ class CreateBadges < ActiveRecord::Migration[6.1]
       
       t.timestamps
     end
-    add_index :badges, :title, unique: true
   end
 end
