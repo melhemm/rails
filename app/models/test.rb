@@ -12,6 +12,7 @@ class Test < ApplicationRecord
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :categories_by_name, -> (category) { joins(:category).where(categories: {title: category}) }
 
+  validates :time_limit, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   

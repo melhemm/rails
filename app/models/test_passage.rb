@@ -32,6 +32,14 @@ class TestPassage < ApplicationRecord
     test.questions.where('id <= :id', id: current_question.id).count
   end
 
+  def time_limit_test?
+    test.time_limit.present?
+  end
+
+  def remaining_seconds
+    ((created_at + test.time_limit.minutes) - Time.current).to_i
+  end
+
   private
 
   def set_current_question
