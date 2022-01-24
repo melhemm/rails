@@ -9,12 +9,11 @@
       <%= form.text_field :img_url, id: :badge_img_url %>
     </p>
       <div class="form-group switch-field">
-        <%= form.label "Category" %>
-        <%= form.radio_button :reward_rule, 'category', id: :reward_rule_category, checked: true %>
-        <%= form.label "Attempt" %>
-        <%= form.radio_button :reward_rule, 'attempt', id: :reward_rule_attempt %>
-        <%= form.label "Level" %>
-        <%= form.radio_button :reward_rule, 'level', id: :rule_type_level %>
+        <%= form.label :reward_rule %>
+        <%= form.select :reward_rule, options_for_select(Badge::BADGE_RULES) %>
+
+        <%= form.label :value %>
+        <%= form.text_field :value %>
       </div>
     <p><%= form.submit %></p>
 <% end %>

@@ -1,38 +1,26 @@
 class BadgeService
 
-  LEVEL = 1
-  CATEGORY_TYPE = "back-end"
-
   def initialize(test_passage)
     @test_passage = test_passage
     @user = test_passage.user
     @test = test_passage.test
   end
 
-  def find_badges
-    Badge.all.map { |badge| send("#{badge.reward_rule}_award", badge) }.compact
+  def call
+    Badge.all.each do |badge|
+      reward(badge) if send("#{badge.reward_rule}?", badge.value) && !UserBadge.find_by(user_id: @user.id, badge_id: badge.id)
+    end
   end
 
-  private
-
-  def attempt_award(badge)
-    badge if first_attempt?(@test)
+  def reward(badge)
+    @user.badges << badge
   end
 
-  def level_award(badge)
-    badge if level_choice?(LEVEL)
+  def all_in_category?(category_id)
+    @test_passage.passed? && @user.tests.where('category_id = ?', category_id).uniq.count == Test.where('category_id = ?', category_id).count
   end
 
-  def category_award(badge)
-    badge if all_in_category?(CATEGORY_TYPE)
-  end
-
-  def all_in_category?(category_name)
-    Test.categories_by_name(category_name).count == 0 ? false :
-      Test.categories_by_name(category_name).count == @user.completed_tests.categories_by_name(category_name).count
-  end
-  
-  def first_attempt?(test)
+  def first_attempt?(test_id)
     @user.tests.where(id: @test_passage.test_id).count == 1 && @test_passage.passed == true
   end
 
