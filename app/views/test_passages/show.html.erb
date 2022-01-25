@@ -24,7 +24,7 @@
       <% end %>
         <%= link_to t('.gist'), test_passage_gists_path(@test_passage), method: :post, class: 'btn btn-success' %>
         <%= form.submit t('.next'),
-          class: "btn btn-primary start-btn",
+          class: "btn btn-primary start-btn test-submit",
           data: { progress: (@test_passage.current_question_number) * 100 / @test_passage.test.questions.count },
           id: 'progress'%>
       <% end %>

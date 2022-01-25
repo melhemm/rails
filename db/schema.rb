@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_114232) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "badges", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "img_url", null: false
-    t.string "reward_rule"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -92,15 +84,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_114232) do
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
   end
 
-  create_table "user_badges", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "badge_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
-    t.index ["user_id"], name: "index_user_badges_on_user_id"
-  end
-
   create_table "user_tests", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "test_id", null: false
@@ -147,8 +130,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_114232) do
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
-  add_foreign_key "user_badges", "badges"
-  add_foreign_key "user_badges", "users"
   add_foreign_key "user_tests", "tests"
   add_foreign_key "user_tests", "users"
 end

@@ -36,6 +36,10 @@ class TestPassage < ApplicationRecord
     test.time_limit.present?
   end
 
+  def time_up?
+    remaining_seconds.negative?
+  end
+
   def remaining_seconds
     ((created_at + test.time_limit.minutes) - Time.current).to_i
   end

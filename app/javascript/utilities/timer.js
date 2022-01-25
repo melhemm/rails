@@ -11,10 +11,10 @@ const countDown = (timer) => {
     limitInSeconds--
     showRemainigTime(limitInSeconds, timer)
 
-    if (limitInSeconds == 0) {
+    if (limitInSeconds <= 0) {
       clearInterval(timerId)
       timer.textContent = "Time is over"
-      window.location.replace(window.location + '/result')
+      document.querySelectorAll('.test-submit').click()
     }
   }, 1000)
 }
