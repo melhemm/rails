@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :feedbacks, only: %i[new create]
   end
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     member do
       post :start
@@ -28,5 +30,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

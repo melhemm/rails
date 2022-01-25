@@ -20,4 +20,8 @@ class Test < ApplicationRecord
     .order(title: :desc)
     .pluck(:title)
   end
+
+  def self.by_category(name)
+    categories_by_name(name).order(title: :desc).pluck(:title)
+  end
 end
