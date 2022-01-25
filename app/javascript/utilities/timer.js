@@ -1,6 +1,6 @@
 document.addEventListener('turbolinks:load', function() {
   const testTimer = document.querySelector(".test-timer");
-  if (testTimer) { countDown(testTimer) }
+  if (testTimer) countDown(testTimer) 
 })
 
 const countDown = (timer) => {
